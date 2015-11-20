@@ -11,7 +11,7 @@
 		38F1EF461BFEAB960030A8A3 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF421BFEAB960030A8A3 /* ItemTableViewCell.swift */; };
 		38F1EF471BFEAB960030A8A3 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF431BFEAB960030A8A3 /* ScheduleTableViewController.swift */; };
 		38F1EF481BFEAB960030A8A3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF441BFEAB960030A8A3 /* SectionHeaderView.swift */; };
-		38F1EF491BFEAB960030A8A3 /* valio.json in Resources */ = {isa = PBXBuildFile; fileRef = 38F1EF451BFEAB960030A8A3 /* valio.json */; };
+		7E1039E71BFECE7A0081D129 /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E1039E61BFECE7A0081D129 /* testData.json */; settings = {ASSET_TAGS = (); }; };
 		C858E0591BFE809700092ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C858E0581BFE809700092ED1 /* AppDelegate.swift */; };
 		C858E05D1BFE809700092ED1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C858E05C1BFE809700092ED1 /* SecondViewController.swift */; };
 		C858E0601BFE809800092ED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C858E05E1BFE809800092ED1 /* Main.storyboard */; };
@@ -42,7 +42,7 @@
 		38F1EF421BFEAB960030A8A3 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		38F1EF431BFEAB960030A8A3 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		38F1EF441BFEAB960030A8A3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
-		38F1EF451BFEAB960030A8A3 /* valio.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = valio.json; sourceTree = "<group>"; };
+		7E1039E61BFECE7A0081D129 /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
 		99232446C0F27A5B6E53A996 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1CE8AB1A8AC9CCDBA3B95B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C858E0551BFE809700092ED1 /* ios_schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,9 +127,9 @@
 				38F1EF421BFEAB960030A8A3 /* ItemTableViewCell.swift */,
 				38F1EF431BFEAB960030A8A3 /* ScheduleTableViewController.swift */,
 				38F1EF441BFEAB960030A8A3 /* SectionHeaderView.swift */,
-				38F1EF451BFEAB960030A8A3 /* valio.json */,
 				C858E0631BFE809800092ED1 /* LaunchScreen.storyboard */,
 				C858E0661BFE809800092ED1 /* Info.plist */,
+				7E1039E61BFECE7A0081D129 /* testData.json */,
 			);
 			path = ios_schedule;
 			sourceTree = "<group>";
@@ -272,7 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C858E0651BFE809800092ED1 /* LaunchScreen.storyboard in Resources */,
-				38F1EF491BFEAB960030A8A3 /* valio.json in Resources */,
+				7E1039E71BFECE7A0081D129 /* testData.json in Resources */,
 				C858E0621BFE809800092ED1 /* Assets.xcassets in Resources */,
 				C858E0601BFE809800092ED1 /* Main.storyboard in Resources */,
 			);
