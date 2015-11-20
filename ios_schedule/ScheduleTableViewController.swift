@@ -11,35 +11,52 @@ import UIKit
 
 
 class ScheduleTableViewController: UITableViewController {
+   lazy var scheduleData: NSArray = []
 
-	lazy var 📅: NSArray = {
-		let path = NSBundle.mainBundle().pathForResource("valio", ofType: "json")!
-		let data = try! NSData(contentsOfFile: path, options: [])
-		return (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! NSArray
-	}()
+	
+
+    //📅
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        /*
+        //load from local json file
+        self.scheduleData = {
+            let path = NSBundle.mainBundle().pathForResource("testData", ofType: "json")!
+            let data = try! NSData(contentsOfFile: path, options: [])
+            return (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! NSArray
+            }()
+        */
 
+        //alamofire load mongolab json files
+        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/quizaerotest/collections/iOSSchedule?apiKey=Ce20LdOG8wMtypYyzXTk6wkkQUo-TVUf")
+            .responseJSON { response in
+                self.scheduleData = (try! NSJSONSerialization.JSONObjectWithData(response.data!, options: [])) as! NSArray
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.tableView.reloadData()
+                }
+        }
+        //end load json
+        
 		//navigationItem.titleView = UIImageView(image: UIImage(named: "Valio"))
-		
 		tableView.registerClass(ItemTableViewCell.self, forCellReuseIdentifier: "cell")
 		tableView.separatorStyle = .None
     }
 	
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-		return 📅.count
+		return scheduleData.count
 	}
 
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
-		let day = 📅[section] as! NSDictionary
+		let day = scheduleData[section] as! NSDictionary
 		let items = day["items"] as! NSArray
 		return items.count
     }
 
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ItemTableViewCell
-		let day = 📅[indexPath.section] as! NSDictionary
+		let day = scheduleData[indexPath.section] as! NSDictionary
 		let items = day["items"] as! NSArray
 		let item = items[indexPath.row] as! NSDictionary
 		
@@ -56,12 +73,15 @@ class ScheduleTableViewController: UITableViewController {
     }
 	
 	override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		let day = 📅[section] as! NSDictionary
+		let day = scheduleData[section] as! NSDictionary
+        //print(scheduleData[0]);
+       
+
 		return day["title"] as? String
 	}
 	
 	override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		let day = 📅[section] as! NSDictionary
+		let day = scheduleData[section] as! NSDictionary
 		let view = SectionHeaderView()
 		view.titleLabel.text = (day["title"] as! String).uppercaseString
 		return view
