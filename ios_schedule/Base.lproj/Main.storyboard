@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uMN-KB-Sgo">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -33,6 +33,98 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o07-bq-iPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1230" y="-352"/>
+        </scene>
+        <!--Forum View Controller-->
+        <scene sceneID="zEJ-dl-uO4">
+            <objects>
+                <viewController id="aDd-S1-OKz" customClass="ForumViewController" customModule="ios_schedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DVx-ax-g9B"/>
+                        <viewControllerLayoutGuide type="bottom" id="dHu-2c-CcK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ACl-BN-1e8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ui-BH-dPN">
+                                <rect key="frame" x="4" y="138" width="313" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UA4-M7-jxe"/>
+                    <connections>
+                        <outlet property="forumTitle" destination="7Ui-BH-dPN" id="wYX-X2-bDA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OM2-oZ-imI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1736" y="846"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="HyJ-vZ-2Rp">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="rXT-e7-dhe" customClass="ForumTableViewController" customModule="ios_schedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hsi-zO-92s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="9fG-aj-2H2">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9fG-aj-2H2" id="95G-Pd-yl5">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="aDd-S1-OKz" kind="push" identifier="segueToForum" id="Tor-qJ-NWE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rXT-e7-dhe" id="8Pl-Lx-4dB"/>
+                            <outlet property="delegate" destination="rXT-e7-dhe" id="JmZ-Wy-uvb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Rb9-ya-Yvn"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Wj-uT-9Tt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2276" y="58"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kLf-Sg-nCR">
+            <objects>
+                <navigationController id="LXg-zr-cv0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4CB-HL-LWF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rXT-e7-dhe" kind="relationship" relationship="rootViewController" id="fUz-E5-Ucg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VCf-oZ-cXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1736" y="58"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Q4R-RT-45p">
+            <objects>
+                <splitViewController id="zFC-vG-7K9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="h9I-mv-haA"/>
+                    <connections>
+                        <segue destination="LXg-zr-cv0" kind="relationship" relationship="masterViewController" id="X8v-Iy-ov9"/>
+                        <segue destination="aDd-S1-OKz" kind="relationship" relationship="detailViewController" id="Iut-H7-ZVZ"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yeM-z7-AcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1264" y="353"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="n9s-CE-kHb">
@@ -177,6 +269,7 @@
         <!--Forum-->
         <scene sceneID="dde-PU-Mup">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dlW-Jy-Fbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController title="Forum" automaticallyAdjustsScrollViewInsets="NO" id="vba-k2-HfP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Forum" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
@@ -187,78 +280,18 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="f4K-Ma-hcW" kind="relationship" relationship="rootViewController" id="epl-0P-IHz"/>
+                        <segue destination="zFC-vG-7K9" kind="relationship" relationship="rootViewController" id="vQr-Hs-PV8"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dlW-Jy-Fbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="744" y="353"/>
-        </scene>
-        <!--Forum View Controller-->
-        <scene sceneID="uZF-yE-fT2">
-            <objects>
-                <viewController id="3aE-GN-nYa" customClass="ForumViewController" customModule="ios_schedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="azW-pe-cfu"/>
-                        <viewControllerLayoutGuide type="bottom" id="y6t-4S-cue"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cVw-Jc-9MC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gF6-dI-uDB">
-                                <rect key="frame" x="7" y="83" width="308" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="joX-7K-Tkc"/>
-                    <connections>
-                        <outlet property="forumTitle" destination="gF6-dI-uDB" id="Pem-Be-BJc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TRg-gx-9iU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1781" y="353"/>
-        </scene>
-        <!--Forum Index-->
-        <scene sceneID="XXI-O5-BJb">
-            <objects>
-                <tableViewController id="f4K-Ma-hcW" customClass="ForumTableViewController" customModule="ios_schedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kPv-r5-oBw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForumCell" id="sFw-0G-S3E">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sFw-0G-S3E" id="Zxb-aR-voT">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="3aE-GN-nYa" kind="replace" identifier="segueToForum" splitViewControllerTargetIndex="1" id="LkM-2W-yse"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="f4K-Ma-hcW" id="Rra-RQ-Fur"/>
-                            <outlet property="delegate" destination="f4K-Ma-hcW" id="hZq-IL-2oN"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Forum Index" id="Hwf-H2-GEA"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NmA-kn-bih" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1230" y="353"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Tor-qJ-NWE"/>
+    </inferredMetricsTieBreakers>
 </document>

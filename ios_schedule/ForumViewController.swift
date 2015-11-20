@@ -17,7 +17,7 @@ class ForumViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.forumTitle.text = "Whatever Forum"
+        self.forumTitle.text = "Forum \(forumPage.forumName)"
         // Do any additional setup after loading the view.
     }
 
