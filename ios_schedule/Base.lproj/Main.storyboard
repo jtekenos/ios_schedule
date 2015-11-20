@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OM2-oZ-imI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1736" y="846"/>
+            <point key="canvasLocation" x="1998" y="882"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="HyJ-vZ-2Rp">
@@ -73,7 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="9fG-aj-2H2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ForumCell" id="9fG-aj-2H2">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9fG-aj-2H2" id="95G-Pd-yl5">
@@ -81,7 +81,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="aDd-S1-OKz" kind="push" identifier="segueToForum" id="Tor-qJ-NWE"/>
+                                    <segue destination="aDd-S1-OKz" kind="push" identifier="segueToForum" splitViewControllerTargetIndex="1" id="Tor-qJ-NWE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -94,7 +94,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Wj-uT-9Tt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276" y="58"/>
+            <point key="canvasLocation" x="2271" y="58"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kLf-Sg-nCR">
@@ -269,7 +269,6 @@
         <!--Forum-->
         <scene sceneID="dde-PU-Mup">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dlW-Jy-Fbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController title="Forum" automaticallyAdjustsScrollViewInsets="NO" id="vba-k2-HfP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Forum" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
@@ -283,6 +282,7 @@
                         <segue destination="zFC-vG-7K9" kind="relationship" relationship="rootViewController" id="vQr-Hs-PV8"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dlW-Jy-Fbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="744" y="353"/>
         </scene>
