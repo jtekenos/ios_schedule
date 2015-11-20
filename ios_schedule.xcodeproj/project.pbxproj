@@ -14,6 +14,7 @@
 		38F1EF471BFEAB960030A8A3 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF431BFEAB960030A8A3 /* ScheduleTableViewController.swift */; };
 		38F1EF481BFEAB960030A8A3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF441BFEAB960030A8A3 /* SectionHeaderView.swift */; };
 		7E1039E71BFECE7A0081D129 /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E1039E61BFECE7A0081D129 /* testData.json */; };
+		C81D87C11BFF31AE00FFC69E /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D87C01BFF31AE00FFC69E /* TopicViewController.swift */; };
 		C858E0591BFE809700092ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C858E0581BFE809700092ED1 /* AppDelegate.swift */; };
 		C858E0601BFE809800092ED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C858E05E1BFE809800092ED1 /* Main.storyboard */; };
 		C858E0621BFE809800092ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C858E0611BFE809800092ED1 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		7E1039E61BFECE7A0081D129 /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
 		99232446C0F27A5B6E53A996 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1CE8AB1A8AC9CCDBA3B95B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C81D87C01BFF31AE00FFC69E /* TopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
 		C858E0551BFE809700092ED1 /* ios_schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C858E0581BFE809700092ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C858E05F1BFE809800092ED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				7E1039E61BFECE7A0081D129 /* testData.json */,
 				38DC16BD1BFEEDBB001B342B /* ForumTableViewController.swift */,
 				38DC16BF1BFEEF6E001B342B /* ForumViewController.swift */,
+				C81D87C01BFF31AE00FFC69E /* TopicViewController.swift */,
 			);
 			path = ios_schedule;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				38F1EF481BFEAB960030A8A3 /* SectionHeaderView.swift in Sources */,
 				38F1EF471BFEAB960030A8A3 /* ScheduleTableViewController.swift in Sources */,
 				C858E0591BFE809700092ED1 /* AppDelegate.swift in Sources */,
+				C81D87C11BFF31AE00FFC69E /* TopicViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +507,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jess.ios-schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -516,6 +521,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jess.ios-schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
