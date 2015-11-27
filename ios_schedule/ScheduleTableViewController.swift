@@ -8,6 +8,7 @@
 
 import Alamofire
 import UIKit
+import Parse
 
 
 class ScheduleTableViewController: UITableViewController {
@@ -28,9 +29,26 @@ class ScheduleTableViewController: UITableViewController {
             return (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! NSArray
             }()
         */
-
+        
+        print(PFUser.currentUser()!.username!)
+        var currentUserSet: String = ""
+        
+        //get user set
+        var query = PFUser.query()
+        query!.whereKey("username", equalTo:PFUser.currentUser()!.username!)
+        do{
+            var user = try query!.findObjects().first as! PFUser
+           currentUserSet = user["set"] as! String
+        } catch{}
+        
+        print(currentUserSet)
+        print(PFUser.currentUser()!.username!)
+        
+        
         //alamofire load mongolab json files
-        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/quizaerotest/collections/iOSSchedule?apiKey=Ce20LdOG8wMtypYyzXTk6wkkQUo-TVUf")
+        let queryString = "https://api.mongolab.com/api/1/databases/quizaerotest/collections/" + "set" + currentUserSet + "?apiKey=Ce20LdOG8wMtypYyzXTk6wkkQUo-TVUf"
+        
+        Alamofire.request(.GET, queryString)
             .responseJSON { response in
                 self.scheduleData = (try! NSJSONSerialization.JSONObjectWithData(response.data!, options: [])) as! NSArray
                 dispatch_async(dispatch_get_main_queue()) {
