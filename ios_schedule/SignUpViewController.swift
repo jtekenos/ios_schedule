@@ -11,7 +11,7 @@ import ParseUI
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var userName: UITextField!
@@ -91,10 +91,21 @@ class SignUpViewController: UIViewController {
         }
  
     }
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         message.text = ""
+        self.userName.delegate = self;
+        self.firstName.delegate = self;
+        self.lastName.delegate = self;
+        self.password.delegate = self;
+        self.email.delegate = self;
+        self.set.delegate = self;
+        activityIndicator.hidden = true
+        activityIndicator.hidesWhenStopped = true
     }
 
     
