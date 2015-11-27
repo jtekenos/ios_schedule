@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-  
   
         lazy var window: UIWindow? = {
             let win = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -27,8 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     
 
+    Parse.enableLocalDatastore()
+    
+    // Initialize Parse.
+    Parse.setApplicationId("V8B9K8uoWHxjnVwlRr6esuuYyuJdpCIz33eWpo6V",
+        clientKey: "MuXw7T3Szk3VJHycIc2Y2J05d7TGLJodMLm90h54")
 
-    window!.makeKeyAndVisible()
     return true
   }
 
