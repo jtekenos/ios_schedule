@@ -9,6 +9,9 @@
 import UIKit
 import Parse
 import Bolts
+import RealmSwift
+
+let uiRealm = try! Realm()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
