@@ -23,14 +23,16 @@
 		1B1A36471C081BDD00A57BDE /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1A36461C081BDD00A57BDE /* ParseUI.framework */; };
 		1B1A36491C081BE000A57BDE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1A36481C081BE000A57BDE /* Parse.framework */; };
 		1B1A364B1C081BE200A57BDE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1A364A1C081BE200A57BDE /* Bolts.framework */; };
-		1B1A364D1C0821B100A57BDE /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A364C1C0821B100A57BDE /* SignUpInViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		1B1A36551C08427100A57BDE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A36541C08427100A57BDE /* CurrentUser.swift */; settings = {ASSET_TAGS = (); }; };
+		1B1A364D1C0821B100A57BDE /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A364C1C0821B100A57BDE /* SignUpInViewController.swift */; };
+		1B1A36551C08427100A57BDE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A36541C08427100A57BDE /* CurrentUser.swift */; };
 		38DC16BE1BFEEDBB001B342B /* ForumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC16BD1BFEEDBB001B342B /* ForumTableViewController.swift */; };
 		38DC16C01BFEEF6E001B342B /* ForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC16BF1BFEEF6E001B342B /* ForumViewController.swift */; };
 		38F1EF461BFEAB960030A8A3 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF421BFEAB960030A8A3 /* ItemTableViewCell.swift */; };
 		38F1EF471BFEAB960030A8A3 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF431BFEAB960030A8A3 /* ScheduleTableViewController.swift */; };
 		38F1EF481BFEAB960030A8A3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF441BFEAB960030A8A3 /* SectionHeaderView.swift */; };
 		7E1039E71BFECE7A0081D129 /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E1039E61BFECE7A0081D129 /* testData.json */; };
+		7E376A801C08EA650075AFB4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E376A7F1C08EA650075AFB4 /* SignUpViewController.swift */; };
+		7E376A821C08F6390075AFB4 /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E376A811C08F6390075AFB4 /* EditAccountViewController.swift */; };
 		C81D87C11BFF31AE00FFC69E /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D87C01BFF31AE00FFC69E /* TopicViewController.swift */; };
 		C858E0591BFE809700092ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C858E0581BFE809700092ED1 /* AppDelegate.swift */; };
 		C858E0601BFE809800092ED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C858E05E1BFE809800092ED1 /* Main.storyboard */; };
@@ -81,6 +83,8 @@
 		38F1EF431BFEAB960030A8A3 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		38F1EF441BFEAB960030A8A3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		7E1039E61BFECE7A0081D129 /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
+		7E376A7F1C08EA650075AFB4 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7E376A811C08F6390075AFB4 /* EditAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
 		99232446C0F27A5B6E53A996 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1CE8AB1A8AC9CCDBA3B95B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C81D87C01BFF31AE00FFC69E /* TopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				C81D87C01BFF31AE00FFC69E /* TopicViewController.swift */,
 				1B1A364C1C0821B100A57BDE /* SignUpInViewController.swift */,
 				1B1A36541C08427100A57BDE /* CurrentUser.swift */,
+				7E376A7F1C08EA650075AFB4 /* SignUpViewController.swift */,
+				7E376A811C08F6390075AFB4 /* EditAccountViewController.swift */,
 			);
 			path = ios_schedule;
 			sourceTree = "<group>";
@@ -423,6 +429,8 @@
 				38DC16BE1BFEEDBB001B342B /* ForumTableViewController.swift in Sources */,
 				1B1A364D1C0821B100A57BDE /* SignUpInViewController.swift in Sources */,
 				38DC16C01BFEEF6E001B342B /* ForumViewController.swift in Sources */,
+				7E376A801C08EA650075AFB4 /* SignUpViewController.swift in Sources */,
+				7E376A821C08F6390075AFB4 /* EditAccountViewController.swift in Sources */,
 				38F1EF481BFEAB960030A8A3 /* SectionHeaderView.swift in Sources */,
 				38F1EF471BFEAB960030A8A3 /* ScheduleTableViewController.swift in Sources */,
 				C858E0591BFE809700092ED1 /* AppDelegate.swift in Sources */,
