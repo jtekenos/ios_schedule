@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class EditAccountViewController: UIViewController {
+class EditAccountViewController: UIViewController, UITextFieldDelegate {
     var userId: String = ""
     var userEmail: String = ""
     var userFirstName: String = ""
@@ -33,7 +33,12 @@ class EditAccountViewController: UIViewController {
                 (succeeded: Bool, error: NSError?) -> Void in
                 if error == nil {
                     
-                    self.message.text = "Account updated"
+                    //edit confirmation alert
+                    let alert = UIAlertView()
+                    alert.title = "Account Updated"
+                    alert.message = "Please sign out for changes to take effect"
+                    alert.addButtonWithTitle("OK")
+                    alert.show()
                     
                 } else {
                     
@@ -44,15 +49,26 @@ class EditAccountViewController: UIViewController {
                 }
             }
         }
+        
+    }
+    
+    @IBAction func logoutAction(sender: AnyObject)
+    {
+        PFUser.logOut()
+        self.performSegueWithIdentifier("editToLoginSegue", sender: self)
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         //get user info
-        
         let query = PFUser.query()
         query!.whereKey("username", equalTo:PFUser.currentUser()!.username!)
         do{
@@ -70,6 +86,11 @@ class EditAccountViewController: UIViewController {
         set.text = userSet
         email.text = userEmail
         message.text = ""
+        
+        self.firstName.delegate = self;
+        self.lastName.delegate = self;
+        self.email.delegate = self;
+        self.set.delegate = self;
     }
     /*
     @IBAction func toScheduleBut(sender: AnyObject) {
