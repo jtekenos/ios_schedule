@@ -132,7 +132,7 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
         //alert title
         alertController.addTextFieldWithConfigurationHandler{(textfield) -> Void in
             textfield.placeholder = "Class Forum Name"
-            textfield.addTarget(self, action: "classNameFieldDidChange", forControlEvents: UIControlEvents.EditingChanged)
+            textfield.addTarget(self, action: "classNameFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
             if updatedClass != nil {
                 textfield.text = updatedClass.name
             }
