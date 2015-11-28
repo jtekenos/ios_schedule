@@ -43,11 +43,7 @@ class EditAccountViewController: UIViewController {
                     }
                 }
             }
-            
-            
-            
         }
-        
     }
     
     

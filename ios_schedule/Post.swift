@@ -12,11 +12,10 @@ import RealmSwift
 class Post: Object {
     dynamic var postId = 0
     dynamic var name = ""
-    dynamic var userName = ""
     dynamic var createdAt = NSDate()
     dynamic var content = ""
     dynamic var isCompleted = false
-    let replies = List<Reply>()
+    let replyList = List<Reply>()
     
     
     // Specify properties to ignore (Realm won't persist these)
