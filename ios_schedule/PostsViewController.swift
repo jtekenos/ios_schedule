@@ -142,7 +142,7 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Destructive, title: "Delete") { (deleteAction, indexPath) -> Void in
             
-            //TODO delete
+            //delete
             var postToBeDeleted: Post!
             if indexPath.section == 0 {
                 postToBeDeleted = self.openPosts[indexPath.row]
@@ -161,12 +161,37 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             
         }
+        
+        //edit
         let editAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Edit") { (editAction, indexPath) -> Void in
+            var postToBeUpdated: Post!
+            if indexPath.section == 0 {
+                postToBeUpdated = self.openPosts[indexPath.row]
+            } else {
+                postToBeUpdated = self.completedPosts[indexPath.row]
+            }
             
+            self.displayAlertToAddPost(postToBeUpdated)
             
         }
+        
+        //POST
         let doneAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Done") { (doneAction, indexPath) -> Void in
-            
+            var postToBeUpdated: Post!
+            if indexPath.section == 0 {
+                postToBeUpdated = self.completedPosts[indexPath.row]
+            } else {
+                postToBeUpdated = self.completedPosts[indexPath.row]
+            }
+            do {
+                try uiRealm.write({ () -> Void in
+                    postToBeUpdated.isCompleted = true
+                    self.readPostsAndUpdateUI()
+                })
+            } catch let error as NSError {
+                
+                print("FAILED TO POST. \(error.localizedDescription)")
+            }
         }
         
         return [deleteAction, editAction, doneAction]

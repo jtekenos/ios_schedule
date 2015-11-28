@@ -15,6 +15,7 @@ class Post: Object {
     dynamic var userName = ""
     dynamic var createdAt = NSDate()
     dynamic var content = ""
+    dynamic var isCompleted = false
     let replies = List<Reply>()
     
     
