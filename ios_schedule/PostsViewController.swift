@@ -37,6 +37,8 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func readPostsAndUpdateUI() {
         completedPosts = self.selectedClass.posts.filter("isCompleted = true")
         openPosts = self.selectedClass.posts.filter("isCompleted = false")
+        
+        self.postsTableView.reloadData()
     }
     
     //MARK: - navbar buttons
@@ -50,31 +52,21 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //MARK: - required table functions
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return openPosts.count
-        }
-        return completedPosts.count
+        return openPosts.count
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "OPEN POSTS"
-        }
-        return "COMPLETED POSTS"
+        return "OPEN POSTS"
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")
         var post: Post!
-        if indexPath.section == 0 {
-            post = openPosts[indexPath.row]
-        } else {
-            post = completedPosts[indexPath.row]
-        }
+        post = openPosts[indexPath.row]
         
         cell?.textLabel?.text = post.name
         return cell!
@@ -126,7 +118,7 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alertController.addTextFieldWithConfigurationHandler{ (textField) -> Void in
             textField.placeholder = "Post Name"
-            textField.addTarget(self, action: "postNameFieldDidChange", forControlEvents: UIControlEvents.EditingChanged)
+            textField.addTarget(self, action: "postNameFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
             if updatedPost != nil {
                 textField.text = updatedPost.name
             }
