@@ -177,7 +177,6 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
             }
             
         }
-        //TODO edit
         let editAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Edit") {(editAction, indexPath) -> Void in
         
             let classToBeUpdated = self.classes[indexPath.row]

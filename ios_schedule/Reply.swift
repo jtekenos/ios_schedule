@@ -13,7 +13,8 @@ class Reply: Object {
     
     dynamic var replyId = 0
     dynamic var name = ""
-    dynamic var createdAt = NSDate()
+    dynamic var createdAt = ""
+    dynamic var author = ""
     dynamic var content = ""
     dynamic var postId = 0
     

@@ -28,6 +28,10 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        readPostsAndUpdateUI()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,6 +41,8 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func readPostsAndUpdateUI() {
         completedPosts = self.selectedClass.posts.filter("isCompleted = true")
         openPosts = self.selectedClass.posts.filter("isCompleted = false")
+        
+        self.postsTableView.reloadData()
     }
     
     //MARK: - navbar buttons
@@ -50,37 +56,38 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //MARK: - required table functions
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return openPosts.count
-        }
-        return completedPosts.count
+        return openPosts.count
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "OPEN POSTS"
-        }
-        return "COMPLETED POSTS"
+        return "OPEN POSTS"
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")
         var post: Post!
-        if indexPath.section == 0 {
-            post = openPosts[indexPath.row]
-        } else {
-            post = completedPosts[indexPath.row]
-        }
+        post = openPosts[indexPath.row]
         
         cell?.textLabel?.text = post.name
+        cell?.detailTextLabel?.text = "\(post.replyList.count) Replies"
+        cell!.textLabel!.numberOfLines = 0;
         return cell!
     }
     
+    //automatic resize of table cells
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    //MARK: - alert for reply add/edit
     func displayAlertToAddPost(updatedPost:Post!) {
         var title = "New Post"
         var doneTitle = "Create"
@@ -89,7 +96,7 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             doneTitle = "Update"
         }
         
-        let alertController = UIAlertController(title: title, message: "Write the name of your post", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: title, message: "Add a post:", preferredStyle: UIAlertControllerStyle.Alert)
         let createAction = UIAlertAction(title: doneTitle, style: UIAlertActionStyle.Default) { (action) -> Void in
             let postName = alertController.textFields?.first?.text
             
@@ -125,8 +132,8 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //cancel
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         alertController.addTextFieldWithConfigurationHandler{ (textField) -> Void in
-            textField.placeholder = "Post Name"
-            textField.addTarget(self, action: "postNameFieldDidChange", forControlEvents: UIControlEvents.EditingChanged)
+            textField.placeholder = "Post"
+            textField.addTarget(self, action: "postNameFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
             if updatedPost != nil {
                 textField.text = updatedPost.name
             }
@@ -144,12 +151,8 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             //delete
             var postToBeDeleted: Post!
-            if indexPath.section == 0 {
-                postToBeDeleted = self.openPosts[indexPath.row]
-            } else {
-                postToBeDeleted = self.completedPosts[indexPath.row]
-            }
-            
+            postToBeDeleted = self.openPosts[indexPath.row]
+
             do {
                 try uiRealm.write({() -> Void in
                 uiRealm.delete(postToBeDeleted)
@@ -175,38 +178,19 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
         
-        //POST
-        let doneAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Done") { (doneAction, indexPath) -> Void in
-            var postToBeUpdated: Post!
-            if indexPath.section == 0 {
-                postToBeUpdated = self.completedPosts[indexPath.row]
-            } else {
-                postToBeUpdated = self.completedPosts[indexPath.row]
-            }
-            do {
-                try uiRealm.write({ () -> Void in
-                    postToBeUpdated.isCompleted = true
-                    self.readPostsAndUpdateUI()
-                })
-            } catch let error as NSError {
-                
-                print("FAILED TO POST. \(error.localizedDescription)")
-            }
-        }
-        
-        return [deleteAction, editAction, doneAction]
+        return [deleteAction, editAction]
     }
     
     
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("openPost", sender: self.openPosts[indexPath.row])
     }
-    */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let threadViewController = segue.destinationViewController as! ThreadViewController
+        threadViewController.selectedPost = sender as! Post
+    }
+    
 
 }

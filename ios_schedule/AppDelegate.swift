@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             win.backgroundColor = UIColor.whiteColor()
             win.rootViewController = UINavigationController(rootViewController: ScheduleTableViewController())
             return win
-
     }()
 
 

@@ -25,6 +25,7 @@
 		1B1A364B1C081BE200A57BDE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1A364A1C081BE200A57BDE /* Bolts.framework */; };
 		1B1A364D1C0821B100A57BDE /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A364C1C0821B100A57BDE /* SignUpInViewController.swift */; };
 		1B1A36551C08427100A57BDE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A36541C08427100A57BDE /* CurrentUser.swift */; };
+		388C656E1C094DBC0088D9E5 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C656D1C094DBC0088D9E5 /* ThreadViewController.swift */; };
 		38BB49AE1C08EA41003FF7E2 /* ClassForum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BB49AD1C08EA41003FF7E2 /* ClassForum.swift */; };
 		38BB49B01C08EA58003FF7E2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BB49AF1C08EA58003FF7E2 /* Post.swift */; };
 		38BB49B21C08EB07003FF7E2 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BB49B11C08EB07003FF7E2 /* Reply.swift */; };
@@ -82,6 +83,7 @@
 		1B1A364A1C081BE200A57BDE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../parse-library-1.10.0/Bolts.framework"; sourceTree = "<group>"; };
 		1B1A364C1C0821B100A57BDE /* SignUpInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
 		1B1A36541C08427100A57BDE /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		388C656D1C094DBC0088D9E5 /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
 		38BB49AD1C08EA41003FF7E2 /* ClassForum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassForum.swift; sourceTree = "<group>"; };
 		38BB49AF1C08EA58003FF7E2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		38BB49B11C08EB07003FF7E2 /* Reply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				38BB49B41C08EDA7003FF7E2 /* ClassListViewController.swift */,
 				38BB49B61C0900B5003FF7E2 /* PostsViewController.swift */,
+				388C656D1C094DBC0088D9E5 /* ThreadViewController.swift */,
 			);
 			name = ForumClasses;
 			sourceTree = "<group>";
@@ -341,7 +344,7 @@
 				TargetAttributes = {
 					C858E0541BFE809700092ED1 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = FZCYERA5X5;
+						DevelopmentTeam = T37H37ELTY;
 					};
 					C858E06A1BFE809800092ED1 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -457,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38BB49B71C0900B5003FF7E2 /* PostsViewController.swift in Sources */,
+				388C656E1C094DBC0088D9E5 /* ThreadViewController.swift in Sources */,
 				38BB49B51C08EDA7003FF7E2 /* ClassListViewController.swift in Sources */,
 				38F1EF461BFEAB960030A8A3 /* ItemTableViewCell.swift in Sources */,
 				38BB49B01C08EA58003FF7E2 /* Post.swift in Sources */,
@@ -619,7 +623,7 @@
 				INFOPLIST_FILE = ios_schedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "BCIT-schedule";
+				PRODUCT_BUNDLE_IDENTIFIER = "jess.ios-schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -636,7 +640,7 @@
 				INFOPLIST_FILE = ios_schedule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "BCIT-schedule";
+				PRODUCT_BUNDLE_IDENTIFIER = "jess.ios-schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
