@@ -73,7 +73,7 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     //Enable the create action of the alert only if textfield text is not empty
-    func listNameFieldDidChange(textField:UITextField){
+    func classNameFieldDidChange(textField:UITextField){
         self.currentCreateAction.enabled = textField.text?.characters.count > 0
     }
     
