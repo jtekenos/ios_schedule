@@ -36,6 +36,7 @@
 		38BB49B71C0900B5003FF7E2 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BB49B61C0900B5003FF7E2 /* PostsViewController.swift */; };
 		38DC16BE1BFEEDBB001B342B /* ForumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC16BD1BFEEDBB001B342B /* ForumTableViewController.swift */; };
 		38DC16C01BFEEF6E001B342B /* ForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC16BF1BFEEF6E001B342B /* ForumViewController.swift */; };
+		38E491231C0BBE8000994F7F /* default1.realm in Resources */ = {isa = PBXBuildFile; fileRef = 38E491211C0B912E00994F7F /* default1.realm */; };
 		38F1EF461BFEAB960030A8A3 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF421BFEAB960030A8A3 /* ItemTableViewCell.swift */; };
 		38F1EF481BFEAB960030A8A3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF441BFEAB960030A8A3 /* SectionHeaderView.swift */; };
 		7EF6550F1C0934600089BFA4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6550E1C0934600089BFA4 /* SignUpViewController.swift */; };
@@ -95,6 +96,7 @@
 		38BB49B61C0900B5003FF7E2 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		38DC16BD1BFEEDBB001B342B /* ForumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumTableViewController.swift; sourceTree = "<group>"; };
 		38DC16BF1BFEEF6E001B342B /* ForumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumViewController.swift; sourceTree = "<group>"; };
+		38E491211C0B912E00994F7F /* default1.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default1.realm; sourceTree = "<group>"; };
 		38F1EF421BFEAB960030A8A3 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		38F1EF441BFEAB960030A8A3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		7EF6550E1C0934600089BFA4 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		C858E0571BFE809700092ED1 /* ios_schedule */ = {
 			isa = PBXGroup;
 			children = (
+				38E491211C0B912E00994F7F /* default1.realm */,
 				38BB49B31C08EBA6003FF7E2 /* ForumClasses */,
 				38B0D4D91C08E81E00893BD5 /* Model */,
 				C858E0581BFE809700092ED1 /* AppDelegate.swift */,
@@ -386,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E491231C0BBE8000994F7F /* default1.realm in Resources */,
 				C858E0651BFE809800092ED1 /* LaunchScreen.storyboard in Resources */,
 				C858E0621BFE809800092ED1 /* Assets.xcassets in Resources */,
 				C858E0601BFE809800092ED1 /* Main.storyboard in Resources */,

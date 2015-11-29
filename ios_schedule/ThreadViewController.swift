@@ -124,6 +124,7 @@ class ThreadViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func didClickOnEditReply(sender: AnyObject) {
         isInEditMode = !isInEditMode
         self.replyTableView.setEditing(isInEditMode, animated: true)
+        readRepliesAndUpdateUI()
     }
     
     @IBAction func didClickOnAddReply(sender: AnyObject) {
@@ -218,6 +219,7 @@ class ThreadViewController: UIViewController, UITableViewDelegate, UITableViewDa
             do {
                 try uiRealm.write({ () -> Void in
                     uiRealm.delete(replyToBeDeleted)
+                    self.readRepliesAndUpdateUI()
                 })
             } catch let error as NSError {
                 

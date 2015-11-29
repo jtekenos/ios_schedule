@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     
     var selectedClass : ClassForum!
     var openPosts : Results<Post>!
