@@ -13,7 +13,7 @@ class ClassForum: Object {
     
     dynamic var classForumId = 0
     dynamic var name = ""
-    dynamic var instructor = ""
+    dynamic var set = ""
     let posts = List<Post>()
     
     

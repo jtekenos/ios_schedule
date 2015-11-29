@@ -12,7 +12,6 @@ import RealmSwift
 class Post: Object {
     dynamic var postId = 0
     dynamic var name = ""
-    dynamic var createdAt = NSDate()
     dynamic var content = ""
     dynamic var isCompleted = false
     let replyList = List<Reply>()

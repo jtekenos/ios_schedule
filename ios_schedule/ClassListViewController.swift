@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import Parse
+import ParseUI
 
 class ClassListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
@@ -16,14 +18,6 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
     var currentCreateAction:UIAlertAction!
     
     /*
-    let pages = [
-    PageOption(displayName: "Google", url: "https://google.com"),
-    PageOption(displayName: "Apple", url: "https://apple.com"),
-    PageOption(displayName: "iOS Developer Library", url: "https://developer.apple.com/library/ios/navigation/"),
-    PageOption(displayName: "Twitter", url: "https://twitter.com"),
-    PageOption(displayName: "BCIT", url: "https://learn.bcit.ca")
-    ]
-    
     dynamic var classForumId = 0
     dynamic var name = ""
     dynamic var instructor = ""
@@ -31,12 +25,14 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     */
     
+    var parseClass = PFObject(className: "ClassForum")
     
     @IBOutlet weak var classListTableView: UITableView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(uiRealm.path)
 
         // Do any additional setup after loading the view.
     }
@@ -47,8 +43,22 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     //get list of current classes
     func readClassesAndUpdateUI() {
-        
         classes = uiRealm.objects(ClassForum)
+        for aclass in classes {
+            parseClass["name"] = aclass.name
+            parseClass["posts"] = aclass.posts
+            parseClass["set"] = "4r"
+        }
+        parseClass.saveInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            
+            if (succeeded) {
+                print("Object created with id")
+            } else {
+                print("error")
+            }
+        }
+        
         self.classListTableView.setEditing(false, animated: true)
         self.classListTableView.reloadData()
         
