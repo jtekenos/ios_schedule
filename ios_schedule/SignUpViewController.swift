@@ -75,8 +75,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             if error == nil {
                 
                 dispatch_async(dispatch_get_main_queue()) {
-                    CurrentUserInstance.set = userSet!
-                    CurrentUserInstance.userName = uName!
                     self.performSegueWithIdentifier("signUptoTabBarSegue", sender: self)
                 }
                 

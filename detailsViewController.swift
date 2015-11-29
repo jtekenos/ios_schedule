@@ -1,0 +1,69 @@
+//
+//  detailsViewController.swift
+//  ios_schedule
+//
+//  Created by Denis Turitsa on 2015-11-29.
+//  Copyright © 2015 Jess. All rights reserved.
+//
+
+import UIKit
+import Parse
+
+class detailsViewController: UIViewController {
+    var id: String = ""
+    var pulledEvent: PFObject!
+    
+    
+    @IBAction func deleteButton(sender: AnyObject) {
+        pulledEvent.deleteInBackground()
+         self.performSegueWithIdentifier("detailsToSchedule", sender: self)
+        
+    }
+    
+    @IBOutlet weak var deleteButOutlet: UIButton!
+    @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userSettings()
+        getEvent()
+
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func getEvent(){
+        
+        var query = PFQuery(className:"Schedule")
+        query.whereKey("objectId", equalTo: id)
+        do{
+             pulledEvent = try query.findObjects().first as PFObject!
+            
+            //self.tableView.reloadData()
+            titleLabel.text = pulledEvent["eventName"] as! String
+            detailsLabel.text = pulledEvent["eventDescription"] as! String
+            
+        } catch{}
+    }
+
+    func userSettings(){
+        var userquery = PFUser.query()
+        userquery!.whereKey("username", equalTo:PFUser.currentUser()!.username!)
+        do{
+            var user = try userquery!.findObjects().first as! PFUser
+            let userRole = user["role"] as! String
+            if(userRole == "admin"){
+                self.deleteButOutlet.hidden = false
+   
+            } else{
+                 self.deleteButOutlet.hidden = true
+            }
+        } catch{}
+    }
+
+}

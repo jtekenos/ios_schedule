@@ -24,7 +24,10 @@
 		1B1A36491C081BE000A57BDE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1A36481C081BE000A57BDE /* Parse.framework */; };
 		1B1A364B1C081BE200A57BDE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1A364A1C081BE200A57BDE /* Bolts.framework */; };
 		1B1A364D1C0821B100A57BDE /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A364C1C0821B100A57BDE /* SignUpInViewController.swift */; };
-		1B1A36551C08427100A57BDE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A36541C08427100A57BDE /* CurrentUser.swift */; };
+		1B1A36591C0ABF2100A57BDE /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A36581C0ABF2100A57BDE /* ScheduleViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1B1A365B1C0AE4EF00A57BDE /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A365A1C0AE4EF00A57BDE /* TableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		1B1A365D1C0AF96B00A57BDE /* addEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A365C1C0AF96B00A57BDE /* addEventViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1B1A365F1C0B07EB00A57BDE /* detailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A365E1C0B07EB00A57BDE /* detailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		388C656E1C094DBC0088D9E5 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C656D1C094DBC0088D9E5 /* ThreadViewController.swift */; };
 		38BB49AE1C08EA41003FF7E2 /* ClassForum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BB49AD1C08EA41003FF7E2 /* ClassForum.swift */; };
 		38BB49B01C08EA58003FF7E2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BB49AF1C08EA58003FF7E2 /* Post.swift */; };
@@ -34,9 +37,7 @@
 		38DC16BE1BFEEDBB001B342B /* ForumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC16BD1BFEEDBB001B342B /* ForumTableViewController.swift */; };
 		38DC16C01BFEEF6E001B342B /* ForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC16BF1BFEEF6E001B342B /* ForumViewController.swift */; };
 		38F1EF461BFEAB960030A8A3 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF421BFEAB960030A8A3 /* ItemTableViewCell.swift */; };
-		38F1EF471BFEAB960030A8A3 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF431BFEAB960030A8A3 /* ScheduleTableViewController.swift */; };
 		38F1EF481BFEAB960030A8A3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1EF441BFEAB960030A8A3 /* SectionHeaderView.swift */; };
-		7E1039E71BFECE7A0081D129 /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E1039E61BFECE7A0081D129 /* testData.json */; };
 		7EF6550F1C0934600089BFA4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6550E1C0934600089BFA4 /* SignUpViewController.swift */; };
 		7EF655111C0934720089BFA4 /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF655101C0934720089BFA4 /* EditAccountViewController.swift */; };
 		C81D87C11BFF31AE00FFC69E /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D87C01BFF31AE00FFC69E /* TopicViewController.swift */; };
@@ -82,7 +83,10 @@
 		1B1A36481C081BE000A57BDE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../parse-library-1.10.0/Parse.framework"; sourceTree = "<group>"; };
 		1B1A364A1C081BE200A57BDE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../parse-library-1.10.0/Bolts.framework"; sourceTree = "<group>"; };
 		1B1A364C1C0821B100A57BDE /* SignUpInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
-		1B1A36541C08427100A57BDE /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		1B1A36581C0ABF2100A57BDE /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		1B1A365A1C0AE4EF00A57BDE /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		1B1A365C1C0AF96B00A57BDE /* addEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addEventViewController.swift; sourceTree = "<group>"; };
+		1B1A365E1C0B07EB00A57BDE /* detailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = detailsViewController.swift; path = ../detailsViewController.swift; sourceTree = "<group>"; };
 		388C656D1C094DBC0088D9E5 /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
 		38BB49AD1C08EA41003FF7E2 /* ClassForum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassForum.swift; sourceTree = "<group>"; };
 		38BB49AF1C08EA58003FF7E2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -92,9 +96,7 @@
 		38DC16BD1BFEEDBB001B342B /* ForumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumTableViewController.swift; sourceTree = "<group>"; };
 		38DC16BF1BFEEF6E001B342B /* ForumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumViewController.swift; sourceTree = "<group>"; };
 		38F1EF421BFEAB960030A8A3 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
-		38F1EF431BFEAB960030A8A3 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		38F1EF441BFEAB960030A8A3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
-		7E1039E61BFECE7A0081D129 /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
 		7EF6550E1C0934600089BFA4 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7EF655101C0934720089BFA4 /* EditAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
 		99232446C0F27A5B6E53A996 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,18 +232,19 @@
 				C858E05E1BFE809800092ED1 /* Main.storyboard */,
 				C858E0611BFE809800092ED1 /* Assets.xcassets */,
 				38F1EF421BFEAB960030A8A3 /* ItemTableViewCell.swift */,
-				38F1EF431BFEAB960030A8A3 /* ScheduleTableViewController.swift */,
+				1B1A365E1C0B07EB00A57BDE /* detailsViewController.swift */,
 				38F1EF441BFEAB960030A8A3 /* SectionHeaderView.swift */,
 				C858E0631BFE809800092ED1 /* LaunchScreen.storyboard */,
 				C858E0661BFE809800092ED1 /* Info.plist */,
-				7E1039E61BFECE7A0081D129 /* testData.json */,
 				38DC16BD1BFEEDBB001B342B /* ForumTableViewController.swift */,
 				38DC16BF1BFEEF6E001B342B /* ForumViewController.swift */,
 				C81D87C01BFF31AE00FFC69E /* TopicViewController.swift */,
 				1B1A364C1C0821B100A57BDE /* SignUpInViewController.swift */,
-				1B1A36541C08427100A57BDE /* CurrentUser.swift */,
 				7EF6550E1C0934600089BFA4 /* SignUpViewController.swift */,
 				7EF655101C0934720089BFA4 /* EditAccountViewController.swift */,
+				1B1A36581C0ABF2100A57BDE /* ScheduleViewController.swift */,
+				1B1A365A1C0AE4EF00A57BDE /* TableViewCell.swift */,
+				1B1A365C1C0AF96B00A57BDE /* addEventViewController.swift */,
 			);
 			path = ios_schedule;
 			sourceTree = "<group>";
@@ -384,7 +387,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C858E0651BFE809800092ED1 /* LaunchScreen.storyboard in Resources */,
-				7E1039E71BFECE7A0081D129 /* testData.json in Resources */,
 				C858E0621BFE809800092ED1 /* Assets.xcassets in Resources */,
 				C858E0601BFE809800092ED1 /* Main.storyboard in Resources */,
 			);
@@ -462,19 +464,21 @@
 				38BB49B71C0900B5003FF7E2 /* PostsViewController.swift in Sources */,
 				388C656E1C094DBC0088D9E5 /* ThreadViewController.swift in Sources */,
 				38BB49B51C08EDA7003FF7E2 /* ClassListViewController.swift in Sources */,
+				1B1A36591C0ABF2100A57BDE /* ScheduleViewController.swift in Sources */,
+				1B1A365B1C0AE4EF00A57BDE /* TableViewCell.swift in Sources */,
 				38F1EF461BFEAB960030A8A3 /* ItemTableViewCell.swift in Sources */,
 				38BB49B01C08EA58003FF7E2 /* Post.swift in Sources */,
 				38DC16BE1BFEEDBB001B342B /* ForumTableViewController.swift in Sources */,
 				1B1A364D1C0821B100A57BDE /* SignUpInViewController.swift in Sources */,
+				1B1A365D1C0AF96B00A57BDE /* addEventViewController.swift in Sources */,
 				38DC16C01BFEEF6E001B342B /* ForumViewController.swift in Sources */,
 				38BB49AE1C08EA41003FF7E2 /* ClassForum.swift in Sources */,
 				38BB49B21C08EB07003FF7E2 /* Reply.swift in Sources */,
 				7EF6550F1C0934600089BFA4 /* SignUpViewController.swift in Sources */,
 				38F1EF481BFEAB960030A8A3 /* SectionHeaderView.swift in Sources */,
-				38F1EF471BFEAB960030A8A3 /* ScheduleTableViewController.swift in Sources */,
+				1B1A365F1C0B07EB00A57BDE /* detailsViewController.swift in Sources */,
 				7EF655111C0934720089BFA4 /* EditAccountViewController.swift in Sources */,
 				C858E0591BFE809700092ED1 /* AppDelegate.swift in Sources */,
-				1B1A36551C08427100A57BDE /* CurrentUser.swift in Sources */,
 				C81D87C11BFF31AE00FFC69E /* TopicViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
