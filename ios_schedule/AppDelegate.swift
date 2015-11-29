@@ -8,10 +8,15 @@
 
 import UIKit
 import Parse
+import ParseUI
 import Bolts
 import RealmSwift
-
 let uiRealm = try! Realm()
+
+func bundlePath(path: String) -> String? {
+    let resourcePath = NSBundle.mainBundle().resourcePath as NSString?
+    return resourcePath?.stringByAppendingPathComponent(path)
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,21 +31,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Override point for customization after application launch.
     
-//    func setDefaultRealmForUser(username: String) {
-//        var config = Realm.Configuration()
-//        
-//        // Use the default directory, but replace the filename with the username
-//        config.path = NSURL.fileURLWithPath(config.path!)
-//            .URLByDeletingPathExtension!
-//            .URLByAppendingPathComponent("\(username).realm")
-//            .path
-//        
-//        // Set this as the configuration used for the default Realm
-//        Realm.Configuration.defaultConfiguration = config
-//    }
+    var classes : Results<ClassForum>!
+    classes = uiRealm.objects(ClassForum).filter("set = '4R'")
+    if classes.count < 1 {
+        
+        // copy over old data files for migration
+        let defaultPath = Realm.Configuration.defaultConfiguration.path!
+        let defaultParentPath = (defaultPath as NSString).stringByDeletingLastPathComponent
+        print(defaultPath)
+        if let v0Path = bundlePath("default1.realm") {
+            do {
+                try NSFileManager.defaultManager().removeItemAtPath(defaultPath)
+                try NSFileManager.defaultManager().copyItemAtPath(v0Path, toPath: defaultPath)
+            } catch {}
+        }
+        
+        // define a migration block
+        // you can define this inline, but we will reuse this to migrate realm files from multiple versions
+        // to the most current version of our data model
+        let migrationBlock: MigrationBlock = { migration, oldSchemaVersion in
+            
+            if oldSchemaVersion < 1 {
+                migration.enumerate(ClassForum.className()) { oldObject, newObject in
+                    if oldSchemaVersion < 1 {
+                        // combine name fields into a single field
+                        let name = oldObject!["name"] as! String
+                        let set = oldObject!["set"] as! String
+                        let posts = oldObject!["posts"] as? List<Post>
+                    }
+                }
+                migration.enumerate(Post.className()) { oldObject, newObject in
+                    if oldSchemaVersion < 1 {
+                        // combine name fields into a single field
+                        let name = oldObject!["name"] as! String
+                        let createdAt = oldObject!["createdAt"] as! NSDate
+                        let replyList = oldObject!["replyList"] as? List<Reply>
+                    }
+                }
+                migration.enumerate(Reply.className()) { oldObject, newObject in
+                    if oldSchemaVersion < 1 {
+                        // combine name fields into a single field
+                        let name = oldObject!["name"] as! String
+                        let createdAt = oldObject!["createdAt"] as! String
+                        let author = oldObject!["author"] as? String
+                    }
+                }
+                print("Migration complete.")
+                print(oldSchemaVersion)
+            }
+        }
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 1, migrationBlock: migrationBlock)
+        
+        // print out all migrated objects in the default realm
+        // migration is performed implicitly on Realm access
+        //let uiRealm = try! Realm()
+        print("Migrated objects in the default Realm: \(try! uiRealm.objects(Reply))")
 
+        
+        
+        
+    }
+    
+    
     Parse.enableLocalDatastore()
     
     // Initialize Parse.

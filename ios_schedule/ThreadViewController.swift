@@ -124,6 +124,7 @@ class ThreadViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func didClickOnEditReply(sender: AnyObject) {
         isInEditMode = !isInEditMode
         self.replyTableView.setEditing(isInEditMode, animated: true)
+        readRepliesAndUpdateUI()
     }
     
     @IBAction func didClickOnAddReply(sender: AnyObject) {
