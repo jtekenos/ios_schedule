@@ -11,6 +11,16 @@ import RealmSwift
 
 class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    /*
+    
+    https://api.mongolab.com/api/1/databases?apiKey=lZ68ngdDYAMWZ4b1jclQ5bW7H91sysgl
+    
+    https://api.mongolab.com/api/1/databases/a00891453/test?apiKey=lZ68ngdDYAMWZ4b1jclQ5bW7H91sysgl
+    
+    https://api.mongolab.com/api/1/databases/a00891453/collections/test?apiKey=lZ68ngdDYAMWZ4b1jclQ5bW7H91sysgl
+    
+    */
+    
     var selectedClass : ClassForum!
     var openPosts : Results<Post>!
     var completedPosts : Results<Post>!

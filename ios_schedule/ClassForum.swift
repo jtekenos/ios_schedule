@@ -8,10 +8,13 @@
 
 import Foundation
 import RealmSwift
+import Parse
+import ParseUI
 
 class ClassForum: Object {
     
     dynamic var classForumId = 0
+    dynamic var set = ""
     dynamic var name = ""
     dynamic var instructor = ""
     let posts = List<Post>()

@@ -218,6 +218,7 @@ class ThreadViewController: UIViewController, UITableViewDelegate, UITableViewDa
             do {
                 try uiRealm.write({ () -> Void in
                     uiRealm.delete(replyToBeDeleted)
+                    self.readRepliesAndUpdateUI()
                 })
             } catch let error as NSError {
                 

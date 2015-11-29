@@ -28,6 +28,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     
+//    func setDefaultRealmForUser(username: String) {
+//        var config = Realm.Configuration()
+//        
+//        // Use the default directory, but replace the filename with the username
+//        config.path = NSURL.fileURLWithPath(config.path!)
+//            .URLByDeletingPathExtension!
+//            .URLByAppendingPathComponent("\(username).realm")
+//            .path
+//        
+//        // Set this as the configuration used for the default Realm
+//        Realm.Configuration.defaultConfiguration = config
+//    }
 
     Parse.enableLocalDatastore()
     

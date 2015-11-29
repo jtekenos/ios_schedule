@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import Parse
+import ParseUI
 
 class ClassListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
@@ -15,30 +17,75 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
     var isInEditMode = false
     var currentCreateAction:UIAlertAction!
     
-    /*
-    let pages = [
-    PageOption(displayName: "Google", url: "https://google.com"),
-    PageOption(displayName: "Apple", url: "https://apple.com"),
-    PageOption(displayName: "iOS Developer Library", url: "https://developer.apple.com/library/ios/navigation/"),
-    PageOption(displayName: "Twitter", url: "https://twitter.com"),
-    PageOption(displayName: "BCIT", url: "https://learn.bcit.ca")
-    ]
+    var userId: String = ""
+    var userEmail: String = ""
+    var userFirstName: String = ""
+    var userLastName: String = ""
+    var userSet: String = ""
     
+    var allClasses : [PFObject] = []
+    
+    //var classarray: [String] = nil
+    
+    /*
     dynamic var classForumId = 0
     dynamic var name = ""
+    dynamic var set = ""
     dynamic var instructor = ""
     let posts = List<Post>()
-    
     */
     
     
     @IBOutlet weak var classListTableView: UITableView!
-    
+    var parseClass = PFObject(className: "ClassForum")
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let url = NSURL(string: "https://api.mongolab.com/api/1/databases/a00891453/collections/test?apiKey=lZ68ngdDYAMWZ4b1jclQ5bW7H91sysgl")
+//        let response = NSData(contentsOfURL: url!)
+//        let json = (try! NSJSONSerialization.JSONObjectWithData(response!,
+//            options: []) as! NSDictionary)["response"]
+//        
+//        let venues = json!["venues"] as![NSDictionary]
+//        for v in venues{
+//            print(v)
+//        }
 
+        print(uiRealm.path)
+        
+        let query = PFUser.query()
+        query!.whereKey("username", equalTo:PFUser.currentUser()!.username!)
+        do{
+            let user = try query!.findObjects().first as! PFUser
+            userSet = user["set"] as! String
+            userFirstName = user["firstName"] as! String
+            userLastName = user["lastName"] as! String
+            userId = (PFUser.currentUser()!.username)!
+            userEmail = (PFUser.currentUser()!.email)!
+        } catch{}
         // Do any additional setup after loading the view.
+        getData()
+        
+    }
+    
+    
+    func getData() {
+        let getAllClassesQuery = PFQuery(className: "ClassForum")
+        getAllClassesQuery.whereKey("set", equalTo: userSet)
+       
+            getAllClassesQuery.findObjectsInBackgroundWithBlock {
+                (objects: [PFObject]?, error: NSError?) -> Void in
+                if (error == nil && objects != nil) {
+                    for object in objects! {
+                        print(object["name"])
+                        self.allClasses.append(object)
+                        
+                    }
+                } else {
+                    print("Error: \(error!) \(error!.userInfo)")
+                }
+            }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -48,7 +95,7 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
     //get list of current classes
     func readClassesAndUpdateUI() {
         
-        classes = uiRealm.objects(ClassForum)
+        classes = uiRealm.objects(ClassForum).filter("set = '\(userSet)'")
         self.classListTableView.setEditing(false, animated: true)
         self.classListTableView.reloadData()
         
@@ -97,12 +144,30 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
             do {
                 
                 if updatedClass != nil {
-                    try uiRealm.write({ () -> Void in updatedClass.name = className!
-                        self.readClassesAndUpdateUI()
+                    try uiRealm.write({ () -> Void in
+                        updatedClass.name = className!
                     })
+                    
+                    /*
+                    var query = PFQuery(className:"GameScore")
+                    query.getObjectInBackgroundWithId("xWMyZEGZ") {
+                    (gameScore: PFObject?, error: NSError?) -> Void in
+                    if error != nil {
+                    print(error)
+                    } else if let gameScore = gameScore {
+                    gameScore["cheatMode"] = true
+                    gameScore["score"] = 1338
+                    gameScore.saveInBackground()
+                    }
+                    }
+                    */
+                    let updateQuery = PFQuery(className: "ClassForum")
+                    updateQuery.whereKey("name", equalTo: className!)
+                    
                 } else {
                     let newClassForum = ClassForum()
                     newClassForum.name = className!
+                    newClassForum.set = self.userSet
                     
                     try uiRealm.write({ () -> Void in
                         
@@ -110,9 +175,21 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
                         self.readClassesAndUpdateUI()
                     })
                     
+                    self.parseClass["name"] = className!
+                    self.parseClass["set"] = self.userSet
+                    //self.parseClass["Post"] = newClassForum.posts
+                    self.parseClass.saveInBackgroundWithBlock {
+                        (succeeded: Bool, error: NSError?) -> Void in
+                        
+                        if (succeeded) {
+                            print("Object created with id")
+                            self.readClassesAndUpdateUI()
+                        } else {
+                            print("error")
+                        }
+                    }
+                    
                 }
-                
-                
             } catch let error as NSError {
                 
                 print("FAILED TO ADD/UPDATE. \(error.localizedDescription)")
@@ -145,15 +222,19 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
         if let listClasses = classes{
             return listClasses.count
         }
+        //return allClasses.count
         return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell  {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("classCell")
         let classList = classes[indexPath.row]
-        
         cell?.textLabel?.text = classList.name
         cell?.detailTextLabel?.text = "\(classList.posts.count) Posts"
+//        let classList = allClasses[indexPath.row]
+//        cell?.textLabel?.text = classList["name"] as? String
+//        cell?.detailTextLabel?.text = "See Posts"
         return cell!
     }
     
