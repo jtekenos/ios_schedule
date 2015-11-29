@@ -51,6 +51,7 @@ class addEventViewController: UIViewController {
         scheduleEvent["eventDescription"] = eventDescription
         scheduleEvent["dayOfweek"] = dayOfweek
         scheduleEvent["eventRepeat"] = repeatEvent
+        scheduleEvent["redFlag"] = false
 
         let alert = UIAlertView()
         

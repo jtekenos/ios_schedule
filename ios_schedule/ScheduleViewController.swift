@@ -44,13 +44,24 @@ class ScheduleViewController: UIViewController {
         let event = self.eventList[indexPath.row]
         let eventDate : NSDate = event["date"] as! NSDate
         let eventTitle : String = event["eventName"] as! String
+        let redFlag : Bool = event["redFlag"] as! Bool
         var time = NSDateFormatter()
         time.dateFormat = "HH:mm"
 
       cell.timeLabel.text = time.stringFromDate(eventDate)
-        cell.titlleLabel.text = eventTitle
+        
         cell.detailsButton.tag = indexPath.row;
         cell.detailsButton.addTarget(self, action: "detailsAction:", forControlEvents: .TouchUpInside)
+        
+        if(redFlag){
+            cell.titlleLabel.textColor = UIColor.redColor()
+            cell.titlleLabel.text = eventTitle + " - CANCELLED"
+            cell.timeLabel.textColor = UIColor.redColor()
+        } else{
+            cell.titlleLabel.textColor = UIColor.blackColor()
+            cell.timeLabel.textColor = UIColor.blackColor()
+            cell.titlleLabel.text = eventTitle
+        }
         
   
         return cell
