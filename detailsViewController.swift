@@ -23,6 +23,8 @@ class detailsViewController: UIViewController {
     @IBOutlet weak var deleteButOutlet: UIButton!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var setLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +44,19 @@ class detailsViewController: UIViewController {
         var query = PFQuery(className:"Schedule")
         query.whereKey("objectId", equalTo: id)
         do{
-             pulledEvent = try query.findObjects().first as PFObject!
-            
-            //self.tableView.reloadData()
+            pulledEvent = try query.findObjects().first as PFObject!
             titleLabel.text = pulledEvent["eventName"] as! String
+            setLabel.text = "Set: " + (pulledEvent["classSet"] as! String)
             detailsLabel.text = pulledEvent["eventDescription"] as! String
+            
+            let date = pulledEvent["date"] as! NSDate
+            let f = NSDateFormatter()
+            f.dateFormat = "HH:mm EEEE MMMM dd yyyy"
+            dateLabel.text = f.stringFromDate(date)
+            
+            
+            
+            
             
         } catch{}
     }

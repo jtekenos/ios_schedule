@@ -142,12 +142,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLY-Kq-jsd">
-                                <rect key="frame" x="20" y="89" width="280" height="256"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIt-GS-kNY">
                                 <rect key="frame" x="88" y="518" width="120" height="30"/>
                                 <state key="normal" title="Back to Schedule"/>
@@ -162,23 +156,47 @@
                                     <action selector="deleteButton:" destination="TZ1-1b-yh5" eventType="touchUpInside" id="TZP-VN-qnO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChV-fv-hC3">
+                                <rect key="frame" x="115" y="64" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Set:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cz-Vc-5iR">
+                                <rect key="frame" x="139" y="93" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLY-Kq-jsd">
+                                <rect key="frame" x="20" y="133" width="280" height="256"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ChV-fv-hC3" firstAttribute="top" secondItem="kfY-mH-usb" secondAttribute="bottom" constant="8" id="0VV-p6-DbU"/>
                             <constraint firstItem="RNc-xr-0Vs" firstAttribute="top" secondItem="cIt-GS-kNY" secondAttribute="bottom" constant="20" id="2uV-oX-dlk"/>
+                            <constraint firstItem="KLY-Kq-jsd" firstAttribute="top" secondItem="0Cz-Vc-5iR" secondAttribute="bottom" constant="19" id="45d-No-dfT"/>
                             <constraint firstItem="kfY-mH-usb" firstAttribute="top" secondItem="eF5-y7-hdF" secondAttribute="bottom" constant="15" id="9xy-rL-4Rj"/>
                             <constraint firstItem="cIt-GS-kNY" firstAttribute="centerX" secondItem="OMp-RT-0yO" secondAttribute="centerX" id="Htu-lM-l39"/>
+                            <constraint firstItem="0Cz-Vc-5iR" firstAttribute="top" secondItem="ChV-fv-hC3" secondAttribute="bottom" constant="8" id="O9X-HO-wfR"/>
                             <constraint firstItem="KLY-Kq-jsd" firstAttribute="trailing" secondItem="OMp-RT-0yO" secondAttribute="trailingMargin" id="P88-Jp-Uit"/>
+                            <constraint firstItem="0Cz-Vc-5iR" firstAttribute="centerX" secondItem="OMp-RT-0yO" secondAttribute="centerX" id="aGc-KW-VnG"/>
                             <constraint firstItem="KLY-Kq-jsd" firstAttribute="leading" secondItem="OMp-RT-0yO" secondAttribute="leadingMargin" id="cUN-LW-kad"/>
                             <constraint firstItem="kfY-mH-usb" firstAttribute="centerX" secondItem="OMp-RT-0yO" secondAttribute="centerX" id="coS-lo-Lkt"/>
+                            <constraint firstItem="ChV-fv-hC3" firstAttribute="centerX" secondItem="OMp-RT-0yO" secondAttribute="centerX" id="jej-Wj-J78"/>
                             <constraint firstItem="Cxw-4w-iNC" firstAttribute="centerX" secondItem="OMp-RT-0yO" secondAttribute="centerX" id="mFA-5V-IOG"/>
-                            <constraint firstItem="KLY-Kq-jsd" firstAttribute="top" secondItem="kfY-mH-usb" secondAttribute="bottom" constant="33" id="tri-Gy-XIl"/>
                             <constraint firstItem="cIt-GS-kNY" firstAttribute="top" secondItem="Cxw-4w-iNC" secondAttribute="bottom" constant="8" id="w2Q-Yi-fzV"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dateLabel" destination="ChV-fv-hC3" id="88n-h6-wed"/>
                         <outlet property="deleteButOutlet" destination="Cxw-4w-iNC" id="via-SU-m0D"/>
                         <outlet property="detailsLabel" destination="KLY-Kq-jsd" id="PFS-HD-1aU"/>
+                        <outlet property="setLabel" destination="0Cz-Vc-5iR" id="YiO-Mn-pB3"/>
                         <outlet property="titleLabel" destination="kfY-mH-usb" id="BUw-Yk-nbS"/>
                         <segue destination="49e-Tb-3d3" kind="modal" identifier="detailsToSchedule" id="b1D-a1-ng3"/>
                     </connections>
@@ -1346,7 +1364,7 @@
         <image name="clock" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4kL-Vz-Wl3"/>
+        <segue reference="b1D-a1-ng3"/>
         <segue reference="YwI-BC-j4w"/>
     </inferredMetricsTieBreakers>
 </document>
