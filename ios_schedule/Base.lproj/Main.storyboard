@@ -27,7 +27,10 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BxX-IQ-vKD">
                                 <rect key="frame" x="91" y="503" width="120" height="30"/>
-                                <state key="normal" title="Back to Schedule"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.12941176469999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Back to Schedule">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="modal" id="9Dx-j5-EHD"/>
                                 </connections>
@@ -56,7 +59,10 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0c-Lc-pKx">
                                 <rect key="frame" x="116" y="457" width="70" height="30"/>
-                                <state key="normal" title="Add event"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.12941176469999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add event">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="addButton:" destination="4zQ-bQ-EoK" eventType="touchUpInside" id="bdZ-c3-7ZJ"/>
                                 </connections>
@@ -144,14 +150,20 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIt-GS-kNY">
                                 <rect key="frame" x="88" y="518" width="120" height="30"/>
-                                <state key="normal" title="Back to Schedule"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.12941176469999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Back to Schedule">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="modal" id="a1i-kh-XOR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxw-4w-iNC">
                                 <rect key="frame" x="126" y="480" width="45" height="30"/>
-                                <state key="normal" title="Delete"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.12941176469999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="deleteButton:" destination="TZ1-1b-yh5" eventType="touchUpInside" id="TZP-VN-qnO"/>
                                 </connections>
@@ -221,41 +233,42 @@
                                 <rect key="frame" x="20" y="273" width="280" height="207"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="48" id="eqt-Ka-RCg" customClass="TableViewCell" customModule="ios_schedule" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="48" id="eqt-Ka-RCg" customClass="TableViewCell" customModule="ios_schedule" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="280" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eqt-Ka-RCg" id="V1C-oc-OXO">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="247" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYL-At-6nJ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYL-At-6nJ">
                                                     <rect key="frame" x="8" y="15" width="52" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoE-D3-i4T">
-                                                    <rect key="frame" x="86" y="15" width="108" height="21"/>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgT-Bi-QER">
+                                                    <rect key="frame" x="192" y="9" width="47" height="30"/>
+                                                    <color key="backgroundColor" red="0.043137254899999998" green="0.12941176469999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="47" id="MLG-Q6-UkG"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Details">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoE-D3-i4T">
+                                                    <rect key="frame" x="69" y="15" width="108" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgT-Bi-QER">
-                                                    <rect key="frame" x="225" y="8" width="47" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="47" id="MLG-Q6-UkG"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Details"/>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="YYL-At-6nJ" firstAttribute="top" secondItem="V1C-oc-OXO" secondAttribute="topMargin" constant="7" id="3VP-Xy-9jh"/>
-                                                <constraint firstItem="HoE-D3-i4T" firstAttribute="centerX" secondItem="V1C-oc-OXO" secondAttribute="centerX" id="Zh9-IC-cPr"/>
+                                                <constraint firstItem="HoE-D3-i4T" firstAttribute="centerX" secondItem="V1C-oc-OXO" secondAttribute="centerX" id="5ta-wC-xnN"/>
+                                                <constraint firstItem="sgT-Bi-QER" firstAttribute="trailing" secondItem="V1C-oc-OXO" secondAttribute="trailingMargin" id="CC7-Cw-z2W"/>
                                                 <constraint firstItem="HoE-D3-i4T" firstAttribute="leading" secondItem="YYL-At-6nJ" secondAttribute="trailing" constant="26" id="c8g-kh-GcY"/>
-                                                <constraint firstItem="sgT-Bi-QER" firstAttribute="leading" secondItem="HoE-D3-i4T" secondAttribute="trailing" constant="31" id="n73-pU-ZUI"/>
-                                                <constraint firstItem="sgT-Bi-QER" firstAttribute="top" secondItem="V1C-oc-OXO" secondAttribute="topMargin" id="nsG-xG-ys3"/>
                                                 <constraint firstItem="YYL-At-6nJ" firstAttribute="leading" secondItem="V1C-oc-OXO" secondAttribute="leadingMargin" id="oqq-Sr-0hr"/>
-                                                <constraint firstItem="sgT-Bi-QER" firstAttribute="trailing" secondItem="V1C-oc-OXO" secondAttribute="trailingMargin" id="uKp-Cf-x4K"/>
                                                 <constraint firstItem="YYL-At-6nJ" firstAttribute="baseline" secondItem="HoE-D3-i4T" secondAttribute="baseline" id="zv5-Z9-U9R"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -279,14 +292,20 @@
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VM-eN-ZRk">
                                 <rect key="frame" x="20" y="235" width="93" height="30"/>
-                                <state key="normal" title="Get Schedule"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.12941176469999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Get Schedule">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="getScheduleButton:" destination="cq1-DN-RoI" eventType="touchUpInside" id="LEr-rX-CoY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sjw-jM-51k">
                                 <rect key="frame" x="215" y="235" width="85" height="30"/>
-                                <state key="normal" title="Add Event"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.12941176469999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add Event">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="4zQ-bQ-EoK" kind="modal" id="2vT-6W-Zpe"/>
                                 </connections>
@@ -1364,7 +1383,7 @@
         <image name="clock" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b1D-a1-ng3"/>
         <segue reference="YwI-BC-j4w"/>
+        <segue reference="b1D-a1-ng3"/>
     </inferredMetricsTieBreakers>
 </document>
