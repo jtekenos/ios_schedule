@@ -71,7 +71,7 @@ class detailsViewController: UIViewController {
                 self.deleteButOutlet.hidden = false
    
             } else{
-                 //self.deleteButOutlet.hidden = true
+                 self.deleteButOutlet.hidden = true
             }
         } catch{}
     }

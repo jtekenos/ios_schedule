@@ -139,8 +139,8 @@ class ScheduleViewController: UIViewController {
                 self.addEventButton.hidden = false
                 self.setText.hidden = false
             } else{
-                //self.addEventButton.hidden = true
-                //self.setText.hidden = true
+                self.addEventButton.hidden = true
+                self.setText.hidden = true
             }
         } catch{}
     }
