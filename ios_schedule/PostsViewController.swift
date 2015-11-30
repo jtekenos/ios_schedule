@@ -63,11 +63,11 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return openPosts.count
     }
-    
+    /*
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "OPEN POSTS"
     }
-    
+    */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")
         var post: Post!
@@ -76,6 +76,13 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell?.textLabel?.text = post.name
         cell?.detailTextLabel?.text = "\(post.replyList.count) Replies"
         cell!.textLabel!.numberOfLines = 0;
+        
+        if ( indexPath.row % 2 == 0 ) {
+            cell!.backgroundColor = UIColor(white: 1, alpha: 1);
+        } else {
+            cell!.backgroundColor = UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1);
+        }
+        
         return cell!
     }
     

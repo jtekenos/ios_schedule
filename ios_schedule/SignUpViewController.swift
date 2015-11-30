@@ -106,6 +106,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         activityIndicator.hidesWhenStopped = true
     }
     
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
+    
     
 }
 

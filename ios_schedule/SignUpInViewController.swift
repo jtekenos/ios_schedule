@@ -81,6 +81,10 @@ class SignUpInViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
 
     
 }

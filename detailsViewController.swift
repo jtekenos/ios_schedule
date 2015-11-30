@@ -71,9 +71,13 @@ class detailsViewController: UIViewController {
                 self.deleteButOutlet.hidden = false
    
             } else{
-                 self.deleteButOutlet.hidden = true
+                 //self.deleteButOutlet.hidden = true
             }
         } catch{}
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
     }
 
 }

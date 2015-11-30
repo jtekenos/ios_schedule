@@ -36,6 +36,7 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
     */
     
     
+    @IBOutlet weak var setLabel: UILabel!
     @IBOutlet weak var classListTableView: UITableView!
 
     override func viewDidLoad() {
@@ -54,6 +55,8 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
             
         } catch{}
         // Do any additional setup after loading the view.
+        
+        setLabel.text = "Set: " + userSet
         
     }
     override func viewWillAppear(animated: Bool) {
@@ -174,6 +177,14 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
 //        let classList = allClasses[indexPath.row]
 //        cell?.textLabel?.text = classList["name"] as? String
 //        cell?.detailTextLabel?.text = "See Posts"
+        
+        if ( indexPath.row % 2 == 0 ) {
+            cell!.backgroundColor = UIColor(white: 1, alpha: 1);
+        } else {
+            cell!.backgroundColor = UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1);
+        }
+        
+        
         return cell!
     }
     

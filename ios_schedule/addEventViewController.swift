@@ -15,7 +15,7 @@ class addEventViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UITextView!
     @IBOutlet weak var setLabel: UITextField!
     @IBOutlet weak var repeatSwitch: UISwitch!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var datePicker: ColoredDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,9 @@ class addEventViewController: UIViewController {
         
     }
     
-    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
     
     /*
     // MARK: - Navigation
@@ -83,4 +85,15 @@ class addEventViewController: UIViewController {
     }
     */
 
+}
+
+class ColoredDatePicker: UIDatePicker {
+    var changed = false
+    override func addSubview(view: UIView) {
+        if !changed {
+            changed = true
+            self.setValue(UIColor.whiteColor(), forKey: "textColor")
+        }
+        super.addSubview(view)
+    }
 }

@@ -34,7 +34,7 @@ class ThreadViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var userLastName: String = ""
     
     @IBOutlet weak var replyTableView: UITableView!
-    
+    @IBOutlet weak var questionLabel: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,7 @@ class ThreadViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         self.title = selectedPost.name
+        questionLabel.text = selectedPost.name
         
         
         
@@ -76,11 +77,11 @@ class ThreadViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return replies.count
     }
-    
+    /*
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return selectedPost.name
     }
-    
+    */
     //automatic resize of table cells
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
@@ -103,6 +104,11 @@ class ThreadViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell!.textLabel!.numberOfLines = 0;
         cell?.detailTextLabel?.text = subtitle
         
+        if ( indexPath.row % 2 == 0 ) {
+            cell!.backgroundColor = UIColor(white: 1, alpha: 1);
+        } else {
+            cell!.backgroundColor = UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1);
+        }
         
         return cell!
     }

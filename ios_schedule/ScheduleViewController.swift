@@ -58,8 +58,6 @@ class ScheduleViewController: UIViewController {
             cell.titlleLabel.text = eventTitle + " - CANCELLED"
             cell.timeLabel.textColor = UIColor.redColor()
         } else{
-            cell.titlleLabel.textColor = UIColor.blackColor()
-            cell.timeLabel.textColor = UIColor.blackColor()
             cell.titlleLabel.text = eventTitle
         }
         
@@ -83,12 +81,6 @@ class ScheduleViewController: UIViewController {
         let id: String = currentObject.objectId!
         
         self.performSegueWithIdentifier("detailsSegue", sender: id)
-        
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        self.performSegueWithIdentifier("showView", sender: self)
         
     }
 
@@ -147,8 +139,8 @@ class ScheduleViewController: UIViewController {
                 self.addEventButton.hidden = false
                 self.setText.hidden = false
             } else{
-                self.addEventButton.hidden = true
-                self.setText.hidden = true
+                //self.addEventButton.hidden = true
+                //self.setText.hidden = true
             }
         } catch{}
     }
@@ -157,6 +149,7 @@ class ScheduleViewController: UIViewController {
         super.viewDidLoad()
         userSettings()
         getSchedule()
+        self.title = "Schedule"
         
         
        
@@ -186,6 +179,10 @@ class ScheduleViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
     }
     
 }

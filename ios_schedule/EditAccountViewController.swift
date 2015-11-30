@@ -22,6 +22,7 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var message: UILabel!
+    
     @IBAction func editButton(sender: AnyObject) {
         if let currentUser = PFUser.currentUser()
         {
@@ -102,6 +103,10 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
     }
     
     
